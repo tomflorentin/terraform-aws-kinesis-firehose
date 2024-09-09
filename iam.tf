@@ -106,6 +106,7 @@ data "aws_iam_policy_document" "msk" {
   statement {
     effect = "Allow"
     actions = [
+      "kafka*",
       "kafka:GetBootstrapBrokers",
       "kafka:DescribeCluster",
       "kafka:DescribeClusterV2",
@@ -120,6 +121,7 @@ data "aws_iam_policy_document" "msk" {
       "kafka-cluster:DescribeTopic",
       "kafka-cluster:DescribeTopicDynamicConfiguration",
       "kafka-cluster:ReadData",
+      "kafka*"
     ]
     resources = [
       "${var.msk_source_cluster_arn}/${var.msk_source_topic_name}",
