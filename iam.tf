@@ -115,7 +115,7 @@ data "aws_iam_policy_document" "msk" {
     ]
     resources = [
       var.msk_source_cluster_arn,
-      {var.msk_source_cluster_arn}/*
+      "${var.msk_source_cluster_arn}/*"
     ]
   }
 
@@ -130,7 +130,7 @@ data "aws_iam_policy_document" "msk" {
     ]
     resources = [
       var.msk_source_cluster_arn,
-      "{var.msk_source_cluster_arn}/*"
+      "${var.msk_source_cluster_arn}/*"
     ]
   }
 
