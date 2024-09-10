@@ -113,7 +113,7 @@ data "aws_iam_policy_document" "msk" {
       "kafka:DescribeClusterV2",
       "kafka-cluster:Connect"
     ]
-    resources = [var.msk_source_cluster_arn, "*"]
+    resources = [var.msk_source_cluster_arn]
   }
 
   statement {
@@ -126,8 +126,7 @@ data "aws_iam_policy_document" "msk" {
       "kafka-cluster:ReadData"
     ]
     resources = [
-      "${var.msk_source_cluster_arn}/${var.msk_source_topic_name}",
-      "*"
+      "${var.msk_source_cluster_arn}/${var.msk_source_topic_name}"
     ]
   }
 
